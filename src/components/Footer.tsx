@@ -58,7 +58,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-between -m-6">
             <div className="w-auto p-6">
               <p className="text-sm text-gray-300">
-                © Copyright 2022. All Rights Reserved by companyName.
+                © Copyright 2022. All Rights Reserved by AmbitiousAcademy.
               </p>
             </div>
             <div className="w-auto p-6">
