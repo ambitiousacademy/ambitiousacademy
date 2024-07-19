@@ -1,8 +1,8 @@
 "use client"
 import Courses from "../components/Courses";
-import FAQ from "../components/Faqs";
+// import FAQ from "../components/Faqs";
 import HeaderSection from "../components/Header";
-import Ourteam from "../components/Ourteam";
+// import Ourteam from "../components/Ourteam";
 // import Reviews from "@/components/Reviews";
 import { useEffect, useState } from "react";
 import Services from "@/components/Services";
@@ -44,7 +44,7 @@ export default function Home() {
           <Subscribe />
 
           {/* The team component */}
-          <Ourteam />
+          {/* <Ourteam /> */}
 
           {/* FAQ's
           <FAQ /> */}
