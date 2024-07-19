@@ -25,14 +25,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-    <html lang='en'>
-    <Script rel="nofollow" src="https://checkout.razorpay.com/v1/checkout.js" />
-      <body>
-        <Navbar/>
-        {children}
-        <Footer/>
-      </body>
+  <ClerkProvider>
+      <html lang='en'>
+        <head>
+          <title>{metadata.title}</title>
+          <meta name="description" content={metadata.description} />
+          <meta name="robots" content="noindex, nofollow">
+             </head>
+           <body>
+          <Navbar />
+          {children}
+          <Footer />
+          <Script src="https://checkout.razorpay.com/v1/checkout.js" />
+        </body>
     </html>
   </ClerkProvider>
   );
