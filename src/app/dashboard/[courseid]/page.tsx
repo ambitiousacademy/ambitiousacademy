@@ -47,16 +47,44 @@ export default function DashboardCourse() {
 
   return (
     <>
-      <h1>{courseid}</h1>
-      <div className="px-4 py-5 border-b rounded-t sm:px-6">
-        <div className="overflow-hidden bg-white shadow sm:rounded-md">
-          <ul className="divide-y divide-gray-200">
+      <section className="pt-24 pb-28 bg-white overflow-hidden">
+        <div className="container px-4 mx-auto">
+          <div className="text-center max-w-lg mx-auto">
+            <h2 className="mb-5 text-6xl md:text-7xl font-bold font-heading text-center tracking-px-n leading-tight">
+              Get The Drive Access.
+            </h2>
+            <p className="mb-7 text-lg text-gray-600 font-medium">
+              Click Below To Get The Drive Access. On Clicking You will be
+              redirected to a drive folder there you need to apply for access.
+              If You have access then also you need to click below to go the
+              drive folder.
+            </p>
+            <div className="mb-11 md:inline-block">
+              {coursedata?.course?.lectureslinks.map((data, index) => (
+                <a
+                  key={index}
+                  className="py-4 px-6 w-full text-white font-semibold border border-indigo-700 rounded-xl shadow-4xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200"
+                  href={data.lecturelink}
+                >
+                  Click Here
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* 
+      <div className="px-4 py-5 border-b rounded-t sm:px-6 mb-64">
+        <div className="overflow-hidden bg-white shadow sm:rounded-md ">
+          <ul className="divide-y divide-gray-200 my-auto">
             {coursedata?.course?.lectureslinks.map((data, index) => (
               <li key={index}>
-                <a className="block hover:bg-gray-50">
+                <a href={data.lecturelink} className="block hover:bg-gray-50">
                   <div className="px-4 py-4 sm:px-6">
                     <div className="flex items-center justify-between">
-                      <p className="text-gray-700 text-md ">{data.lecturename}</p>
+                      <p className="text-gray-700 text-md ">
+                        {data.lecturename}
+                      </p>
                       <div className="flex flex-shrink-0 ml-2">
                         <p className="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
                           {data.lectureTutorName}
@@ -76,7 +104,7 @@ export default function DashboardCourse() {
             ))}
           </ul>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
