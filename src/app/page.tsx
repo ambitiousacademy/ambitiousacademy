@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Courses from "../components/Courses";
 import FAQ from "../components/Faqs";
 import HeaderSection from "../components/Header";
@@ -7,6 +7,7 @@ import Ourteam from "../components/Ourteam";
 import { useEffect, useState } from "react";
 import Services from "@/components/Services";
 import Subscribe from "../components/Subscribe";
+import Carouselcarousel from "@/components/Coursecarousel";
 
 export default function Home() {
   const [loading, setLoading] = useState(true); // Initialize loading state as true
@@ -31,24 +32,24 @@ export default function Home() {
         
       )} */}
       <>
-          {/* This Contains The Carousel Part */}
-          <HeaderSection /> 
+        {/* This Contains The Carousel Part */}
+        <HeaderSection />
 
         {/* This is the courses section */}
-          <Courses />
-
+        {/* <Courses /> */}
+        <Carouselcarousel />
         {/* This is the services section contains 3 things right now test series, webinars, study materials */}
-          <Services/>
+        <Services />
 
         {/* This is the subscription component for taking user emails and all */}
-          <Subscribe />
+        <Subscribe />
 
-          {/* The team component */}
-          <Ourteam />
+        {/* The team component */}
+        <Ourteam />
 
-          {/* FAQ's
+        {/* FAQ's
           <FAQ /> */}
-        </>
+      </>
     </main>
   );
 }
