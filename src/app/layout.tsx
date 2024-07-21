@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs';
 import Script from "next/script";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -25,15 +19,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
- <ClerkProvider>
-    <html lang='en'>
-    <Script rel="nofollow"src="https://checkout.razorpay.com/v1/checkout.js"/>
-      <body>
-        <Navbar/>
-        {children}
-        <Footer/>
-      </body>
-    </html>
-  </ClerkProvider>
+    <ClerkProvider>
+      <html lang='en'>
+        <body>
+          <Navbar />
+          {children}
+          <Footer />
+          {/* Load Razorpay script dynamically on the client-side */}
+          <Script
+            strategy="lazyOnload"
+            src="https://checkout.razorpay.com/v1/checkout.js"
+          />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
