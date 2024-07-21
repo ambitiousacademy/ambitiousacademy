@@ -48,7 +48,7 @@ const Carouselcarousel: React.FC = () => {
         className="relative w-3/4 mx-auto"
         data-carousel="slide"
       >
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div className="relative overflow-hidden rounded-lg min-h-screen">
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -60,7 +60,7 @@ const Carouselcarousel: React.FC = () => {
               <a href={slide.link}>
                 <img
                   src={slide.src}
-                  className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover"
                   alt={`Slide ${index + 1}`}
                 />
               </a>

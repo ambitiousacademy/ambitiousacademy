@@ -1,121 +1,110 @@
-"use client"
-
-import Image from 'next/image';
+"use client";
 import { useUser } from "@clerk/nextjs";
-import { useEffect, useState } from 'react';
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
-interface CourseDetails {
-   courseid: string;
-   isvalid: boolean;
-   orderid: string;
-   paymentid: string;
-   signature: string;
-   courseimage:string;
-   coursename:string;
-   coursedesc:string;
+interface LectureLink {
+  _id: string;
+  lecturename: string;
+  lecturelink: string;
+  lectureTutorName: string;
+  lectureduration: string;
+  subject: string;
+}
 
- }
- 
- interface User {
-   _id: string;
-   userid: string;
-   useremail: string;
-   enrolledCourses: { coursesdetails: CourseDetails[] }[];
- }
- 
- interface ResponseData {
-   statusCode: number;
-   success: boolean;
-   message: string;
-   user?: User;
- }
+interface Course {
+  _id: string;
+  courseid: string;
+  lectureslinks: LectureLink[];
+}
 
+interface CourseData {
+  course: Course;
+}
 
-export default function Dashboard() {
-   const { isLoaded, isSignedIn, user } = useUser();
-   const [loading, setLoading] = useState(false); // Initialize loading state as true
-
- 
-
-   const [coursedata, setCoursedata] = useState<ResponseData | null>(null);
+export default function DashboardCourse() {
+  const params = useParams();
+  const courseid = params.courseid as string;
+  const { isLoaded, isSignedIn, user } = useUser();
+  const [coursedata, setCoursedata] = useState<CourseData | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       if (user?.id) {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_WEB_URL}/userAllEnrolledCourses?userid=${user.id}`
+          `${process.env.NEXT_PUBLIC_WEB_URL}/protectedCourses?userid=${user.id}&courseid=${courseid}`
         );
-        const data: ResponseData = await res.json();
+        const data: CourseData = await res.json();
         setCoursedata(data);
         console.log("Fetching User Course Data Paid Ones");
       }
     };
 
     fetchData();
-  }, [user]);
+  }, [courseid, user]);
 
-   return (
-        <>
- 
- {
-  loading ? (
-    <div className="loader flex justify-center items-center h-screen">
-      <h1 className="text-sm">Relax! The Page is loading...</h1>
-      {/* Add your loader animation or spinner here */}
-    </div>
-  ) : coursedata?.message === "User found" ? (
-    <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-20 bg-[#F3F4F6]">
-      <div className="container m-auto">
-        <div className="flex flex-wrap -mx-4">
-          {coursedata?.user?.enrolledCourses[0].coursesdetails.map((data, index) => (
-            <div key={index} className="w-full md:w-1/2 xl:w-1/3 px-4">
-              <div className="bg-white rounded-lg overflow-hidden mb-10">
-                <Image
-                  src={`${data.courseimage}`}
-                  alt="image"
-                  className="w-full rounded-xl"
-                  width={200}
-                  height={200}
-                />
-                <div className="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
-                  <h3>
-                    <a
-                      href={`/dashboard/${data.courseid}`}
-                      className="font-semibold text-dark text-xl sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px] mb-4 block hover:text-primary"
-                    >
-                      {data?.coursename}
-                    </a>
-                  </h3>
-                  <p className="text-base text-body-color leading-relaxed mb-7">
-                    {data?.coursedesc}
-                  </p>
-                  <a
-                    href={`/dashboard/${data.courseid}`}
-                    className="inline-block py-2 px-7 border border-[#E5E7EB] rounded-full text-base text-body-color font-medium hover:border-primary hover:bg-primary hover:text-gray-900 transition"
-                  >
-                    View Details
-                  </a>
-                </div>
-              </div>
+  console.log(coursedata);
+
+  return (
+    <>
+      <section className="pt-24 pb-28 bg-white overflow-hidden">
+        <div className="container px-4 mx-auto">
+          <div className="text-center max-w-lg mx-auto">
+            <h2 className="mb-5 text-6xl md:text-7xl font-bold font-heading text-center tracking-px-n leading-tight">
+              Get The Drive Access.
+            </h2>
+            <p className="mb-7 text-lg text-gray-600 font-medium">
+              Click Below To Get The Drive Access. On Clicking You will be
+              redirected to a drive folder there you need to apply for access.
+              If You have access then also you need to click below to go the
+              drive folder.
+            </p>
+            <div className="mb-11 md:inline-block">
+              {coursedata?.course?.lectureslinks.map((data, index) => (
+                <a
+                  key={index}
+                  className="py-4 px-6 w-full text-white font-semibold border border-indigo-700 rounded-xl shadow-4xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200"
+                  href={data.lecturelink}
+                >
+                  Click Here
+                </a>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  ) : (
-    <div className="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
-      <div className="max-w-xl mx-auto sm:px-6 lg:px-8">
-        <div className="flex items-center pt-8 sm:justify-start sm:pt-0">
-          <div className="px-4 text-lg">
-            <p>Hi There {user?.firstName}</p>
-            <p>Your Dashboard is Empty Because You Have Not Enrolled In Any Courses.</p>
           </div>
         </div>
-      </div>
-    </div>
-  )
-}
-
-        </>
-    );
+      </section>
+      {/* 
+      <div className="px-4 py-5 border-b rounded-t sm:px-6 mb-64">
+        <div className="overflow-hidden bg-white shadow sm:rounded-md ">
+          <ul className="divide-y divide-gray-200 my-auto">
+            {coursedata?.course?.lectureslinks.map((data, index) => (
+              <li key={index}>
+                <a href={data.lecturelink} className="block hover:bg-gray-50">
+                  <div className="px-4 py-4 sm:px-6">
+                    <div className="flex items-center justify-between">
+                      <p className="text-gray-700 text-md ">
+                        {data.lecturename}
+                      </p>
+                      <div className="flex flex-shrink-0 ml-2">
+                        <p className="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
+                          {data.lectureTutorName}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-2 sm:flex sm:justify-between">
+                      <div className="sm:flex">
+                        <p className="flex items-center font-light text-gray-500 text-md ">
+                          {data.lectureduration}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div> */}
+    </>
+  );
 }
