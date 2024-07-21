@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from '@clerk/nextjs';
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
+import Script from "next/script";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -19,25 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang='en'>
-        <body>
-          <Navbar />
-          {children}
-          <Footer />
-          {/* Load Razorpay script from a local or CDN location */}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function() {
-                  var script = document.createElement('script');
-                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/razorpay/1.0/checkout.js'; // Replace with your CDN URL
-                  document.body.appendChild(script);
-                })();
-              `
-            }}
-          />
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang='en'>
+    <Script rel="nofollow"src="https://checkout.razorpay.com/v1/checkout.js"/>
+      <body>
+        <Navbar/>
+        {children}
+        <Footer/>
+      </body>
+    </html>
+  </ClerkProvider>
   );
 }
