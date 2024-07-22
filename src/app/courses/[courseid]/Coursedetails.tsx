@@ -210,8 +210,8 @@ const CourseDetails: React.FC = () => {
     <div className="container mx-auto px-4">
       {course && (
         <>
-          <section className="text-gray-600 body-font overflow-hidden">
-            <div className="container px-5 py-24 mx-auto bg-gray-200">
+          <section className="text-gray-600 body-font overflow-hidden bg-gray-200">
+            <div className="container px-5 py-24 mx-auto ">
               <div className="lg:w-full mx-auto flex flex-wrap">
                 <Image
                   src={course?.imgUrl}
@@ -324,7 +324,33 @@ const CourseDetails: React.FC = () => {
                       </a>
                     </span>
                   </div>
-                  <p className="leading-relaxed">{course?.overview}</p>
+                  <h3 className="text-lg font-bold font-heading mb-2">
+                    Course Structure
+                  </h3>
+                  <p>
+                    <span className="font-bold">Duration:</span>{" "}
+                    {course?.structure.duration}
+                  </p>
+                  <p>
+                    <span className="font-bold">Number of Classes:</span>{" "}
+                    {course?.structure.numberOfClasses}
+                  </p>
+                  <p>
+                    <span className="font-bold">Classes per Week:</span>{" "}
+                    {course?.structure.classesPerWeek}
+                  </p>
+                  <p>
+                    <span className="font-bold">Modules:</span>{" "}
+                    {course?.structure.modules}
+                  </p>
+                  <p>
+                    <span className="font-bold">Mode of Learning:</span>{" "}
+                    {course?.structure.modeOfLearning}
+                  </p>
+                  <p>
+                    <span className="font-bold">Assessment:</span>{" "}
+                    {course?.structure.assessment}
+                  </p>
 
                   <div className="mt-8 flex">
                     <span className="title-font font-medium text-2xl text-gray-900">
@@ -369,6 +395,9 @@ const CourseDetails: React.FC = () => {
               <h2 className="mt-12 text-3xl font-bold font-heading mb-4">
                 What you’ll get
               </h2>
+              <div className="mb-8 mt-4">
+                <p className="leading-relaxed">{course?.overview}</p>
+              </div>
               <div className="grid divide-y divide-neutral-20  mx-auto mt-8">
                 {course?.detailedInformation.foundationalModules.map(
                   (data, index) => (
@@ -410,36 +439,7 @@ const CourseDetails: React.FC = () => {
                 )}
               </div>
 
-              <div className="mb-8 mt-8">
-                <h3 className="text-lg font-bold font-heading mb-2">
-                  Course Structure
-                </h3>
-                <p>
-                  <span className="font-bold">Duration:</span>{" "}
-                  {course?.structure.duration}
-                </p>
-                <p>
-                  <span className="font-bold">Number of Classes:</span>{" "}
-                  {course?.structure.numberOfClasses}
-                </p>
-                <p>
-                  <span className="font-bold">Classes per Week:</span>{" "}
-                  {course?.structure.classesPerWeek}
-                </p>
-                <p>
-                  <span className="font-bold">Modules:</span>{" "}
-                  {course?.structure.modules}
-                </p>
-                <p>
-                  <span className="font-bold">Mode of Learning:</span>{" "}
-                  {course?.structure.modeOfLearning}
-                </p>
-                <p>
-                  <span className="font-bold">Assessment:</span>{" "}
-                  {course?.structure.assessment}
-                </p>
-              </div>
-              <div className="mb-8">
+              {/* <div className="mb-8">
                 <h3 className="text-lg font-bold font-heading mb-2">
                   Key Features
                 </h3>
@@ -449,8 +449,8 @@ const CourseDetails: React.FC = () => {
                   <li>{course?.keyFeatures.bareActAndCaseLawStudy}</li>
                   <li>{course?.keyFeatures.practicalExposure}</li>
                 </ul>
-              </div>
-              <div className="mb-8">
+              </div> */}
+              {/* <div className="mb-8">
                 <h3 className="text-lg font-bold font-heading mb-2">
                   Instructor
                 </h3>
@@ -462,7 +462,7 @@ const CourseDetails: React.FC = () => {
                   <span className="font-bold">Bio:</span>{" "}
                   {course?.instructor?.bio}
                 </p>
-              </div>
+              </div> */}
             </div>
           </section>
         </>

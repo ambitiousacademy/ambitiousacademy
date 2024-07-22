@@ -48,7 +48,7 @@ const Carouselcarousel: React.FC = () => {
         className="relative w-3/4 mx-auto"
         data-carousel="slide"
       >
-        <div className="relative overflow-hidden rounded-lg min-h-screen">
+        <div className="relative overflow-hidden rounded-lg mb-24 md:mb-0  h-48 md:min-h-screen">
           {slides.map((slide, index) => (
             <div
               key={index}

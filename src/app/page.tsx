@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Services from "@/components/Services";
 import Subscribe from "../components/Subscribe";
 import Carouselcarousel from "@/components/Coursecarousel";
+import Webinars from "@/components/Webinars";
 
 export default function Home() {
   const [loading, setLoading] = useState(true); // Initialize loading state as true
@@ -43,6 +44,8 @@ export default function Home() {
 
         {/* This is the subscription component for taking user emails and all */}
         <Subscribe />
+
+        <Webinars />
 
         {/* The team component */}
         {/* <Ourteam /> */}
