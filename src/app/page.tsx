@@ -1,4 +1,5 @@
 "use client";
+<link rel='stylesheet' href='src\app\globals.css'></link>
 import Courses from "../components/Courses";
 // import FAQ from "../components/Faqs";
 import HeaderSection from "../components/Header";

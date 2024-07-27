@@ -1,19 +1,38 @@
+import '/src/app/globals.css';
 const ourteam = () => {
-    return (
-
-   <div className="ourteam-container  border-double border-4 rounded-2xl	 border-orange-600">
-
-    <h1 className="text-4xl font-bold mb-4">OUR TEAM :</h1>
-    <a href="/faculty/ankita-pandey"><img src="\photos\ankitaprofile.jpg" alt='image' className="ourteam-image"/></a>
-   <a href="/faculty/aditya-trivedi"><img src="\photos\adityaprofile.jpg" alt='image' className="ourteam-image"/></a>
-   <a href="/faculty/nitesh-dwivedi"><img src="\photos\niteshprofile.jpg" alt='image' className="ourteam-image"/></a>
-   <a href="/faculty/sonali-bhatnagar"><img src="\photos\sonaliprofile.jpg" alt='image' className="ourteam-image"/></a>
-   <a href="/faculty/trisandhaya"><img src="\photos\trishandyaprofile.jpg" alt='image' className="ourteam-image mb-4"/></a>
-   </div>
-
-
+  return (
+      <div className="ourteam-container">
+        <h1 className="ourteam-title">OUR TEAM</h1>
+        <div className="ourteam-grid">
+          <a href="/faculty/ankita-pandey">
+            <img src="/photos/ankitaprofile.jpg" alt="Ankita Pandey" className="ourteam-image" />
+          </a>
+          <a href="/faculty/aditya-trivedi">
+            <img src="/photos/adityaprofile.jpg" alt="Aditya Trivedi" className="ourteam-image" />
+          </a>
+          <a href="/faculty/nitesh-dwivedi">
+            <img src="/photos/niteshprofile.jpg" alt="Nitesh Dwivedi" className="ourteam-image" />
+          </a>
+          <a href="/faculty/sonali-bhatnagar">
+            <img src="/photos/sonaliprofile.jpg" alt="Sonali Bhatnagar" className="ourteam-image" />
+          </a>
+          <a href="/faculty/trisandhaya">
+            <img src="/photos/Nishigandhaprofile.jpg" alt="Nishigandha paniphukan" className="ourteam-image" />
+          </a>
+          <a href="/faculty/trisandhaya">
+            <img src="/photos/trishandyaprofile.jpg" alt="Trisandhaya" className="ourteam-image" />
+          </a>
+          <a href="/faculty/trisandhaya">
+            <img src="/photos/Shuyashprofile.jpg" alt="Suyash Tripathi" className="ourteam-image" />
+          </a>
+          <a href="/faculty/trisandhaya">
+            <img src="/photos/Srijanmishiraprofile.jpg" alt="Srijan Mishra" className="ourteam-image" />
+          </a>
+        </div>
+      </div>
     );
   };
+  
   
   export default ourteam;
   
