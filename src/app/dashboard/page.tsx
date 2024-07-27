@@ -3,23 +3,17 @@ import { useUser } from "@clerk/nextjs";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-interface LectureLink {
-  _id: string;
-  lecturename: string;
-  lecturelink: string;
-  lectureTutorName: string;
-  lectureduration: string;
-  subject: string;
-}
-
-interface Course {
-  _id: string;
-  courseid: string;
-  lectureslinks: LectureLink[];
-}
-
 interface CourseData {
-  course: Course;
+  user: {
+    enrolledCourses: {
+      coursesdetails: Array<{
+        courseid: string;
+        courseimage: string;
+        coursename: string;
+        coursedesc: string;
+      }>;
+    }[];
+  };
 }
 
 export default function DashboardCourse() {
@@ -32,7 +26,7 @@ export default function DashboardCourse() {
     const fetchData = async () => {
       if (user?.id) {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_WEB_URL}/protectedCourses?userid=${user.id}&courseid=${courseid}`
+          `https://ap-south-1.aws.data.mongodb-api.com/app/application-0-jvxnhwz/endpoint/userAllEnrolledCourses?userid=${user.id}`
         );
         const data: CourseData = await res.json();
         setCoursedata(data);
@@ -43,10 +37,11 @@ export default function DashboardCourse() {
     fetchData();
   }, [courseid, user]);
 
-  console.log(coursedata);
+  console.log(coursedata?.user.enrolledCourses[0].coursesdetails);
 
   return (
     <>
+      {/* Uncomment this section if needed
       <section className="pt-24 pb-28 bg-white overflow-hidden">
         <div className="container px-4 mx-auto">
           <div className="text-center max-w-lg mx-auto">
@@ -73,38 +68,55 @@ export default function DashboardCourse() {
           </div>
         </div>
       </section>
-      {/* 
-      <div className="px-4 py-5 border-b rounded-t sm:px-6 mb-64">
-        <div className="overflow-hidden bg-white shadow sm:rounded-md ">
-          <ul className="divide-y divide-gray-200 my-auto">
-            {coursedata?.course?.lectureslinks.map((data, index) => (
-              <li key={index}>
-                <a href={data.lecturelink} className="block hover:bg-gray-50">
-                  <div className="px-4 py-4 sm:px-6">
-                    <div className="flex items-center justify-between">
-                      <p className="text-gray-700 text-md ">
-                        {data.lecturename}
-                      </p>
-                      <div className="flex flex-shrink-0 ml-2">
-                        <p className="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
-                          {data.lectureTutorName}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-2 sm:flex sm:justify-between">
-                      <div className="sm:flex">
-                        <p className="flex items-center font-light text-gray-500 text-md ">
-                          {data.lectureduration}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            ))}
-          </ul>
+      */}
+      <section className="p-24 pb-28 bg-white overflow-hidden">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {coursedata?.user.enrolledCourses[0].coursesdetails?.map((data) => (
+            <a
+              key={data.courseid}
+              className="group flex flex-col focus:outline-none"
+              href={`/dashboard/${data.courseid}`}
+            >
+              <div className="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
+                <img
+                  className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
+                  src={data.courseimage}
+                  alt="Blog Image"
+                />
+                <span className="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3">
+                  {data.coursename}
+                </span>
+              </div>
+
+              <div className="mt-7">
+                <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600">
+                  {data.coursename}
+                </h3>
+                <p className="mt-3 text-gray-800 line-clamp-3">
+                  {data.coursedesc}
+                </p>
+                <p className="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
+                  Explore
+                  <svg
+                    className="shrink-0 size-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </p>
+              </div>
+            </a>
+          ))}
         </div>
-      </div> */}
+      </section>
     </>
   );
 }
