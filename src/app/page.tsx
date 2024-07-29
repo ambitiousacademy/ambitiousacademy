@@ -25,7 +25,7 @@ export default function Home() {
   // You can use async/await if you have async operations to fetch data
 
   return (
-    <main>
+    <main className="bg-[#DEF9C4]">
       {/* {loading ? (
         <div className="loader flex justify-center items-center h-screen">
           <h1 className="text-sm">Relax! The Page is loading...</h1>

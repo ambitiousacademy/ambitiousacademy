@@ -3,7 +3,7 @@ import Image from "next/image";
  export default function Footer(){
     return (
         <>
-        <section className="flex flex-col bg-[#C8CFA0] mt-2 p-10">
+        <section className="flex flex-col bg-[#98D8AA]  p-10">
   <div className="container mx-auto px-4">
     <div className="flex flex-wrap lg:items-center -m-6">
       <div className="w-full md:w-auto p-6">
@@ -14,7 +14,7 @@ import Image from "next/image";
 
         <li className="p-1"><a className="font-heading text-base text-black hover:text-gray-200" href="/about">About Us</a></li>
         <li className="p-1"><a className="font-heading text-base text-black hover:text-gray-200" href="/contact-us">Contact Us</a></li>
-        <li className="p-1"><a className="font-heading text-base text-black hover:text-gray-200" href="/cancelation-policy">Cancelation Policy</a></li>
+        <li className="p-1"><a className="font-heading text-base text-black hover:text-gray-200" href="/cancelation-policy">Cancellation Policy</a></li>
         <li className="p-1"><a className="font-heading text-base text-black hover:text-gray-200" href="/ourteam">Our Team</a></li>
 
          
@@ -26,10 +26,10 @@ import Image from "next/image";
            
           <div className="w-auto p-1.5">
             <h3 className="font-heading font-bold  text-lg text-black">Contact Us:</h3> 
-            <h3 className="font-heading font-medium  text-base text-black">ambitiousacademyadp@gmail.com</h3>
-            <h3 className="font-heading font-medium  text-base text-black">+919238834569</h3>
-            <h3 className="font-heading font-medium  text-base text-black">TAA(The Ambitious Academy)</h3>
-            <h3 className="font-heading font-medium  text-base text-black">ambitiousacademy_edu</h3>
+            <h3 className="font-heading font-medium  text-base text-black"> <a href="mailto:ambitiousacademyadp@gmail.com">ambitiousacademyadp@gmail.com</a></h3>
+            <h3 className="font-heading font-medium  text-base text-black"><a href="tel:+919238834569">+919238834569</a></h3>
+            <h3 className="font-heading font-medium  text-base  text-black"><a href="https://www.linkedin.com/in/taa-the-ambitious-academy-7092b8317/" target="blank">TAA(The Ambitious Academy)</a></h3>
+            <h3 className="font-heading font-medium  text-base text-black"><a href="https://www.instagram.com/taa__._?igsh=cHk2YjkyZGRyZmI3" target="blank"></a>ambitiousacademy_edu</h3>
           </div>
         </div>
       </div>

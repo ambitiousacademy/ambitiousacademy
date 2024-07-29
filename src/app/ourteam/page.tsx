@@ -16,18 +16,22 @@ const ourteam = () => {
           <a href="/faculty/sonali-bhatnagar">
             <img src="/photos/sonaliprofile.jpg" alt="Sonali Bhatnagar" className="ourteam-image" />
           </a>
-          <a href="/faculty/trisandhaya">
-            <img src="/photos/Nishigandhaprofile.jpg" alt="Nishigandha paniphukan" className="ourteam-image" />
+          <a href="/faculty/rachana-jha">
+            <img src="/photos/rachanaprofile.jpg" alt="Srijan Mishra" className="ourteam-image" />
           </a>
           <a href="/faculty/trisandhaya">
             <img src="/photos/trishandyaprofile.jpg" alt="Trisandhaya" className="ourteam-image" />
           </a>
-          <a href="/faculty/trisandhaya">
+          <a href="/faculty/suyash-tripathi">
             <img src="/photos/Shuyashprofile.jpg" alt="Suyash Tripathi" className="ourteam-image" />
           </a>
-          <a href="/faculty/trisandhaya">
+          <a href="/faculty/srijan-mishra">
             <img src="/photos/Srijanmishiraprofile.jpg" alt="Srijan Mishra" className="ourteam-image" />
           </a>
+          <a href="/faculty/nishigandha">
+            <img src="/photos/Nishigandhaprofile.jpg" alt="Nishigandha paniphukan" className="ourteam-image" />
+          </a>
+         
         </div>
       </div>
     );

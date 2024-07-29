@@ -134,7 +134,7 @@ import image1 from '../../public/photos/carousel1.jpg';
  import image2 from '../../public/photos/carousel2.jpg';
  import image3 from '../../public/photos/carousel3.jpg';
  import image4 from '../../public/photos/carousel4.jpg';
- import image5 from '../../public/photos/carousel5.png';
+//  import image5 from '../../public/photos/carousel5.png';
 import '/src/app/globals.css';
 
 
@@ -167,13 +167,13 @@ const Header = () => {
 
       // imageUrl: 'https://img.freepik.com/premium-vector/flat-law-firm-instagram-posts-collection_23-2149340592.jpg',
     },
-    {
-      // title: 'Lorem Ipsum', 
-      // description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, velit.",
-       imageUrl:image5.src,
+    // {
+    //   // title: 'Lorem Ipsum', 
+    //   // description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, velit.",
+    //    imageUrl:image5.src,
 
-      // imageUrl: 'https://img.freepik.com/premium-vector/flat-law-firm-instagram-posts-collection_23-2149340592.jpg',
-    },
+    //   // imageUrl: 'https://img.freepik.com/premium-vector/flat-law-firm-instagram-posts-collection_23-2149340592.jpg',
+    // },
   ];
 
   const totalSlides = slides.length;
