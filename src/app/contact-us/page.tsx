@@ -7,7 +7,7 @@ const ContactUs = () => {
         </p>
         <div className="mb-8">
           <h2 className="text-2xl font-bold">THE AMBITIOUS ACADEMY</h2>
-          <p>Email: <a href="mailto:support@theambitiousacademy.com" className="text-blue-500">support@theambitiousacademy.com</a>; <a href="mailto:contact@theambitiousacademy.com" className="text-blue-500">contact@theambitiousacademy.com</a></p>
+          <p>Email: <a href="mailto:ambitiousacademyadp@gmail.com" className="text-blue-500">ambitiousacademyadp@gmail.com</a>;</p>
           <p>Phone: <a href="tel:+919238834569" className="text-blue-500">+91-9238834569</a></p>
         </div>
         <p>
