@@ -3,11 +3,11 @@ import '/src/app/globals.css';
 
 const Carouselcarousel: React.FC = () => {
   const slides = [
-    { src: "./photos/aditya.jpg", link:"/courses/667546bf72f4b13ae138e3a1" },
-    { src: "./photos/nitesh.jpg", link:"/courses/66977de379aac3bbb3f33441" },
-    { src: "./photos/rachana.jpg", link:"/course/6676563d72f4b13ae10bc0de" },
-    { src: "./photos/demo.png", link: "/course/https:/66977d6579aac3bbb3f2b291" },
-    { src: "./photos/demo.png", link: "/course/https:/66a534c9a388f8e38c30c5c6"},
+    { src: "./photos/CertificateCourseinDraftingandConveyancing.jpg", link:"/courses/667546bf72f4b13ae138e3a1" },
+    { src: "./photos/CertificateCourseonComparativeCriminalLaw.jpg", link:"/courses/66977de379aac3bbb3f33441" },
+    { src: "./photos/CertificateCourseonEnvironmentalLaw.jpg", link:"/course/6676563d72f4b13ae10bc0de" },
+    { src: "./photos/CertificateCourseonCompetitionLaw.jpg", link: "/course/66977d6579aac3bbb3f2b291" },
+    { src: "./photos/CertificateCourseonCopyrightlaws.jpg", link: "/course/66a534c9a388f8e38c30c5c6"},
   ];
   
   return (
