@@ -3,11 +3,11 @@ import '/src/app/globals.css';
 
 const Carouselcarousel: React.FC = () => {
   const slides = [
-    { src: "./photos/CertificateCourseinDraftingandConveyancing.jpg", link:"/courses/667546bf72f4b13ae138e3a1" },
-    { src: "./photos/CertificateCourseonComparativeCriminalLaw.jpg", link:"/courses/66977de379aac3bbb3f33441" },
-    { src: "./photos/CertificateCourseonEnvironmentalLaw.jpg", link:"/course/6676563d72f4b13ae10bc0de" },
-    { src: "./photos/CertificateCourseonCompetitionLaw.jpg", link: "/course/66977d6579aac3bbb3f2b291" },
-    { src: "./photos/CertificateCourseonCopyrightlaws.jpg", link: "/course/66a534c9a388f8e38c30c5c6"},
+    { src: "./photos/CertificateCourseinDraftingandConveyancing.jpg", link:"/courses/66977de379aac3bbb3f33441" },
+    { src: "./photos/CertificateCourseonComparativeCriminalLaw.jpg", link:"/courses/6676563d72f4b13ae10bc0de" },
+    { src: "./photos/CertificateCourseonEnvironmentalLaw.jpg", link:"/courses/66a534c9a388f8e38c30c5c6" },
+    { src: "./photos/CertificateCourseonCompetitionLaw.jpg", link: "/courses/667546bf72f4b13ae138e3a1" },
+    { src: "./photos/CertificateCourseonCopyrightlaws.jpg", link: "/courses/66977d6579aac3bbb3f2b291"},
   ];
   
   return (
