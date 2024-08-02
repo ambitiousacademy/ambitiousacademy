@@ -215,8 +215,8 @@ const CourseDetails: React.FC = () => {
               <div className="lg:w-full mx-auto flex flex-wrap">
                 <Image
                 // dynamic image changed to static
-                  // src={course?.imgUrl}
-                  src="/./photos/demo1.jpg"
+                   src={course?.courseImage}
+                  //src="/./photos/demo1.jpg"
                   alt="image"
                   width={400}
                   height={300}
