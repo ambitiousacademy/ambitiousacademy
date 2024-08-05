@@ -1,7 +1,7 @@
 const Faculty = () => {
     return (
       <main className="bg-[#DEF9C4]">
-      <div className="max-w-4xl mx-auto px-4 py-8 border-double border-4 rounded-2xl border-orange-600" >
+      <div className="max-w-4xl mx-auto px-4 py-8 border-double border-4 text-justify rounded-2xl border-orange-600" >
        
         <h1 className="text-4xl font-bold mb-4">Aditya Trivedi</h1>
         <section className="mb-6">

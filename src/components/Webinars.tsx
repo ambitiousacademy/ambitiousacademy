@@ -16,16 +16,22 @@ const Webinars = () => {
            
           </div>
           <div className="webinar-card">
-            <img
+            <img 
               src="./photos/Webinar2.jpg"
               className="webinar-image"
               alt="Webinar 2"
             />
-            
+           </div>  
+          <div className="webinar-card">
+            <img
+              src="./photos/Webinar3.jpg"
+              className="webinar-image"
+              alt="Webinar 2"
+            />
+            </div>
           </div>
           {/* Add more webinar cards as needed */}
         </div>
-      </div>
     </section>
   );
 };

@@ -35,7 +35,7 @@ const Services = () => {
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                 <path d="M22 4L12 14.01l-3-3"></path>
               </svg>
-              <span className="service-item-title">Podcast</span>
+              <a href='https://linktr.ee/beyondthebrief'target="blank"><span className="service-item-title">Podcast</span></a>
             </div>
             <div className="service-item">
               <svg className="service-item-icon" viewBox="0 0 24 24">
