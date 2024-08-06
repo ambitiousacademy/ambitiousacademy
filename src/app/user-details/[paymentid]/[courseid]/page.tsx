@@ -125,6 +125,7 @@ const RegistrationForm: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    toast.success("We are getting your data please wait...");
     e.preventDefault();
 
     const store = new SteinStore(
@@ -163,173 +164,259 @@ const RegistrationForm: React.FC = () => {
   if (!paymentValid) {
     return <div>{errorMessage}</div>;
   }
+  interface FormData {
+    name: string;
+    email: string;
+    contactnumber: string;
+    occupation: string;
+    degree: string;
+    year: string;
+    courseenrolled: string;
+    courseTitle: string;
+    coursePrice: string;
+    rateknowledgeofcourse: string;
+    referral: string;
+    yourreference: string;
+    paymentid: string;
+  }
+
+  interface RadioOption {
+    value: string;
+    label: string;
+  }
+
+  interface RadioData {
+    [key: string]: RadioOption[];
+  }
+
+  const radioData: RadioData = {
+    rateknowledgeofcourse: [
+      { value: "High", label: "High" },
+      { value: "Average", label: "Average" },
+      { value: "Below Average", label: "Below Average" },
+    ],
+    referral: [
+      {
+        value: "Concerned Faculty of the Course",
+        label: "Concerned Faculty of the Course",
+      },
+      { value: "Instagram", label: "Instagram" },
+      { value: "LinkedIn", label: "LinkedIn" },
+      { value: "Our Website", label: "Our Website" },
+      {
+        value: "From any other source or reference",
+        label: "From any other source or reference",
+      },
+    ],
+  };
+
+  interface RadioGroupProps {
+    name: string;
+    options: RadioOption[];
+    selectedValue: string;
+    handleChange: (e: any) => void;
+  }
+
+  const RadioGroup: React.FC<RadioGroupProps> = ({
+    name,
+    options,
+    selectedValue,
+    handleChange,
+  }) => (
+    <div className="mt-2">
+      {options.map((option) => (
+        <label key={option.value} className="inline-flex items-center ml-4">
+          <input
+            type="radio"
+            className="form-radio"
+            name={name}
+            value={option.value}
+            checked={selectedValue === option.value}
+            onChange={handleChange}
+            required
+          />
+          <span className="ml-2">{option.label}</span>
+        </label>
+      ))}
+    </div>
+  );
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-xl mx-auto p-4 shadow-md rounded-md"
-    >
-      <div className="mb-4">
-        <label className="block text-gray-700">Name</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+    <>
+      <div className="text-center pt-24 pb-24">
+        <p className="text-xs font-semibold text-gray-500 tracking-wide uppercase mb-3 ">
+          Hi {user?.fullName}
+        </p>
+        <h1 className="text-3xl text-gray-800 font-bold sm:text-5xl lg:text-6xl lg:leading-tight">
+          We Want To Know More <span className="text-blue-500">About You.</span>
+        </h1>
       </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Email</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="email"
-          name="email"
-          value={formData.email}
-          readOnly
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Contact Number</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="contactnumber"
-          value={formData.contactnumber}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Occupation</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="occupation"
-          value={formData.occupation}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Degree</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="degree"
-          value={formData.degree}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Year</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="year"
-          value={formData.year}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Course Enrolled</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="courseenrolled"
-          value={formData.courseenrolled}
-          readOnly
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Course Title</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="courseTitle"
-          value={formData.courseTitle}
-          readOnly
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Course Price</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="coursePrice"
-          value={formData.coursePrice}
-          readOnly
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Rate Knowledge of Course</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="rateknowledgeofcourse"
-          value={formData.rateknowledgeofcourse}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Referral</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="referral"
-          value={formData.referral}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Your Reference</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="yourreference"
-          value={formData.yourreference}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Payment ID</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="paymentid"
-          value={formData.paymentid}
-          readOnly
-        />
-      </div>
-
-      <button
-        type="submit"
-        className="w-full px-4 py-2 bg-blue-500 text-white rounded-md"
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-xl mx-auto p-4 shadow-md rounded-md"
       >
-        Submit
-      </button>
-      <Toaster />
-    </form>
+        <div className="mb-4">
+          <label className="block text-gray-700">Name</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Email</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="email"
+            name="email"
+            value={formData.email}
+            readOnly
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Contact Number</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="contactnumber"
+            value={formData.contactnumber}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Occupation</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="occupation"
+            value={formData.occupation}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Degree</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="degree"
+            value={formData.degree}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Year</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="year"
+            value={formData.year}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Course Enrolled</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="courseenrolled"
+            value={formData.courseenrolled}
+            readOnly
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Course Title</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="courseTitle"
+            value={formData.courseTitle}
+            readOnly
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Course Price</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="coursePrice"
+            value={formData.coursePrice}
+            readOnly
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">
+            Rate Knowledge of Course
+          </label>
+          <RadioGroup
+            name="rateknowledgeofcourse"
+            options={radioData.rateknowledgeofcourse}
+            selectedValue={formData.rateknowledgeofcourse}
+            handleChange={handleChange}
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">
+            From where you got to know about this course?
+          </label>
+          <RadioGroup
+            name="referral"
+            options={radioData.referral}
+            selectedValue={formData.referral}
+            handleChange={handleChange}
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Your Reference</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="yourreference"
+            value={formData.yourreference}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700">Payment ID</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md"
+            type="text"
+            name="paymentid"
+            value={formData.paymentid}
+            readOnly
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full px-4 py-2 bg-blue-500 text-white rounded-md"
+        >
+          Submit
+        </button>
+        <Toaster />
+      </form>
+    </>
   );
 };
 

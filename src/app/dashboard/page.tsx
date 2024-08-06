@@ -44,7 +44,7 @@ export default function DashboardCourse() {
         if (data.message === "User found") {
           setIsUserFound(true);
         }
-        console.log("Fetching User Course Data Paid Ones");
+        console.log("Fetching User Course Data Paid Ones" + user?.id);
       }
     };
 
