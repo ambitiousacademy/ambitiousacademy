@@ -315,7 +315,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  max-height: 500px; /* Limit the height */
+  max-height: 800px; /* Limit the height */
 }
 
 /* Center the content and add spacing */
@@ -338,7 +338,7 @@
 /* Grid layout for webinar cards */
 .webinars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Two columns in the first row */
   gap: 20px;
 }
 
@@ -349,6 +349,7 @@
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .webinar-card:hover {
   transform: scale(1.05);
@@ -365,39 +366,18 @@
 .webinar-card:hover .webinar-image {
   opacity: 0.8;
 }
-
-/* Overlay with text */
-.webinar-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 20px;
-  text-align: left;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.webinar-card:hover .webinar-overlay {
-  opacity: 1;
-}
-
-.webinar-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.webinar-description {
-  font-size: 1rem;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .webinars-title {
     font-size: 1.8rem;
+  }
+
+  .webinars-grid {
+    grid-template-columns: 1fr; /* Stack images in a single column on small screens */
+  }
+
+  .webinar-card {
+    justify-self: center; /* Center each card horizontally */
   }
 
   .webinar-image {
@@ -406,12 +386,24 @@
 
   .webinar-title {
     font-size: 1.2rem;
+    margin-top: 10px; /* Add some margin for better spacing */
   }
 
   .webinar-description {
     font-size: 0.9rem;
   }
 }
+
+/* Adjustments for larger screens */
+@media (min-width: 769px) {
+  .webinar-card:nth-child(3) {
+    grid-column: span 2; /* Span two columns */
+    width: 600px;
+   
+    justify-self: center; /* Center the third item */
+  }
+}
+
 
 /*-----------------------------------------------courses.css -------------------------------------+ */
 .courses-section {
@@ -464,7 +456,6 @@
 }
 
 .last-row {
-
   margin-top: 20px;
   display: flex;
   justify-content: center; /* Center the last image */
