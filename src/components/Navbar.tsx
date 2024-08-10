@@ -11,7 +11,6 @@ const Navbar = () => {
   const { isSignedIn, user } = useUser();
   const { signOut } = useClerk();
   const [isvalidadmin, setIsValidAdmin] = useState(false);
-  const [popUp, setPopUp] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchcourse = async () => {
@@ -28,47 +27,7 @@ const Navbar = () => {
 
     fetchcourse();
   }, [user]);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setPopUp(true);
-    }, 3000);
 
-    return () => clearTimeout(timer); // Cleanup timeout on component unmount
-  }, []); // Empty dependency array ensures this runs only once
-
-  const PopupComponent = ({ closePopup }: { closePopup: () => void }) => (
-    <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="relative bg-white border border-gray-200 rounded-xl shadow-sm p-4 sm:p-7">
-        <button
-          onClick={closePopup}
-          className="text-right absolute top-0 right-0"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="size-10"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-            />
-          </svg>
-        </button>
-        <div className="text-center">
-          <h1 className="block text-2xl font-bold text-gray-800">
-            Ambitious Coupons
-          </h1>
-          <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-            Fresh Deals Available. Buy Courses At Great Discounts!...
-          </p>
-        </div>
-      </div>
-    </div>
-  );
   return (
     <>
       <nav className="bg-white border-gray-200 sticky top-0 left-0 w-full z-50">
@@ -182,7 +141,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      {popUp && <PopupComponent closePopup={() => setPopUp(false)} />}
     </>
   );
 };

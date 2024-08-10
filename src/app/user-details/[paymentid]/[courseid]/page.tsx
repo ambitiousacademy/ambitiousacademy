@@ -2,7 +2,7 @@
 
 import { useUser } from "@clerk/nextjs";
 import { useParams } from "next/navigation";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react"; // Import ChangeEvent here
 import axios from "axios";
 import SteinStore from "stein-js-client";
 import toast from "react-hot-toast";
@@ -23,6 +23,67 @@ interface FormData {
   yourreference: string;
   paymentid: string;
 }
+
+interface RadioOption {
+  value: string;
+  label: string;
+}
+
+interface RadioData {
+  [key: string]: RadioOption[];
+}
+
+const radioData: RadioData = {
+  rateknowledgeofcourse: [
+    { value: "High", label: "High" },
+    { value: "Average", label: "Average" },
+    { value: "Below Average", label: "Below Average" },
+  ],
+  referral: [
+    {
+      value: "Concerned Faculty of the Course",
+      label: "Concerned Faculty of the Course",
+    },
+    { value: "Instagram", label: "Instagram" },
+    { value: "LinkedIn", label: "LinkedIn" },
+    { value: "Our Website", label: "Our Website" },
+    {
+      value: "From any other source or reference",
+      label: "From any other source or reference",
+    },
+  ],
+};
+
+interface RadioGroupProps {
+  name: string;
+  options: RadioOption[];
+  selectedValue: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+
+const RadioGroup: React.FC<RadioGroupProps> = ({
+  name,
+  options,
+  selectedValue,
+  handleChange,
+}) => (
+  <div className="mt-2">
+    {options.map((option) => (
+      <label key={option.value} className="inline-flex items-center ml-4">
+        <input
+          type="radio"
+          className="form-radio"
+          name={name}
+          value={option.value}
+          checked={selectedValue === option.value}
+          onChange={handleChange}
+          required
+        />
+        <span className="ml-2">{option.label}</span>
+      </label>
+    ))}
+  </div>
+);
 
 const RegistrationForm: React.FC = () => {
   const params = useParams();
@@ -125,6 +186,7 @@ const RegistrationForm: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    toast.success("Sending Please Wait..");
     e.preventDefault();
 
     const store = new SteinStore(
@@ -261,6 +323,7 @@ const RegistrationForm: React.FC = () => {
           name="courseTitle"
           value={formData.courseTitle}
           readOnly
+          required
         />
       </div>
 
@@ -272,30 +335,29 @@ const RegistrationForm: React.FC = () => {
           name="coursePrice"
           value={formData.coursePrice}
           readOnly
+          required
         />
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700">Rate Knowledge of Course</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
+        <label className="block text-gray-700">
+          Rate knowledge of the course
+        </label>
+        <RadioGroup
           name="rateknowledgeofcourse"
-          value={formData.rateknowledgeofcourse}
-          onChange={handleChange}
-          required
+          options={radioData.rateknowledgeofcourse}
+          selectedValue={formData.rateknowledgeofcourse}
+          handleChange={handleChange}
         />
       </div>
 
       <div className="mb-4">
         <label className="block text-gray-700">Referral</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
+        <RadioGroup
           name="referral"
-          value={formData.referral}
-          onChange={handleChange}
-          required
+          options={radioData.referral}
+          selectedValue={formData.referral}
+          handleChange={handleChange}
         />
       </div>
 
@@ -307,24 +369,12 @@ const RegistrationForm: React.FC = () => {
           name="yourreference"
           value={formData.yourreference}
           onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="mb-4">
-        <label className="block text-gray-700">Payment ID</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="paymentid"
-          value={formData.paymentid}
-          readOnly
         />
       </div>
 
       <button
         type="submit"
-        className="w-full px-4 py-2 bg-blue-500 text-white rounded-md"
+        className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
       >
         Submit
       </button>
