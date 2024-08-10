@@ -21,7 +21,7 @@ const PaymentAndFees = () => {
           </p>
           <ul className="list-disc list-inside">
             <li className="mb-2">
-              <strong>Contact for Withdrawal:</strong> You can contact us at <a href="mailto:support@theambitiousacademy.com" className="text-blue-500 underline">support@theambitiousacademy.com</a> with detailed reasons for your cancellation request.
+              <strong>Contact for Withdrawal:</strong> You can contact us at <a href="mailto:ambitiousacademyadp@gmail.com" className="text-blue-500 underline">ambitiousacademyadp@gmail.com</a> with detailed reasons for your cancellation request.
             </li>
             <li className="mb-2">
               <strong>Approval:</strong> All cancellation and refund requests are subject to approval by our team.

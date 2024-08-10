@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white border-gray-200 sticky top-0 left-0 w-full z-50">
+      <nav className="bg-[#DEF9C4] border-gray-200 sticky top-0 left-0 w-full z-50">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="/"
@@ -77,7 +77,7 @@ const Navbar = () => {
             } w-full md:block md:w-auto`}
             id="navbar-default"
           >
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-orange-500 rounded-lg bg-[#DEF9C4] md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-[#DEF9C4]">
               <li>
                 <a
                   href="/about"

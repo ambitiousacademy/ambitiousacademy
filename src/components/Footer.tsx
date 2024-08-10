@@ -26,10 +26,21 @@ import Image from "next/image";
            
           <div className="w-auto p-1.5">
             <h3 className="font-heading font-bold  text-lg text-black">Contact Us:</h3> 
-            <h3 className="font-heading font-medium  text-base text-black"> <a href="mailto:ambitiousacademyadp@gmail.com">ambitiousacademyadp@gmail.com</a></h3>
-            <h3 className="font-heading font-medium  text-base text-black"><a href="tel:+919238834569">+919238834569</a></h3>
-            <h3 className="font-heading font-medium  text-base  text-black"><a href="https://www.linkedin.com/in/taa-the-ambitious-academy-7092b8317/" target="blank">TAA(The Ambitious Academy)</a></h3>
-            <h3 className="font-heading font-medium  text-base text-black"><a href="https://www.instagram.com/taa__._?igsh=cHk2YjkyZGRyZmI3" target="blank"></a>ambitiousacademy_edu</h3>
+            <h3 className="font-heading font-medium  text-base text-black"> <a href="mailto:ambitiousacademyadp@gmail.com">
+            <img src="/photos/mail.png" alt="email" className="inline-block h-4 w-4 mr-1.5" />
+              ambitiousacademyadp@gmail.com</a></h3>
+            <h3 className="font-heading font-medium  text-base text-black"> <a href="mailto:taapublication@gmail.com">
+            <img src="/photos/mail.png" alt="email" className="inline-block h-4 w-4 mr-1.5"/>
+            taapublication@gmail.com (for blogs submission)</a></h3>
+            <h3 className="font-heading font-medium  text-base text-black"><a href="whatsapp://send?text=Hello&phone=+919238834569">
+            <img src="/photos/whatsapp.png" alt="email" className="inline-block h-4 w-4 mr-1.5" />
+            +919238834569</a></h3>
+            <h3 className="font-heading font-medium  text-base  text-black"><a href="https://www.linkedin.com/in/taa-the-ambitious-academy-7092b8317/" target="blank">
+            <img src="/photos/linkdin.png" alt="email" className="inline-block h-4 w-4 mr-1.5" />
+            The Ambitious Academy </a></h3>
+            <h3 className="font-heading font-medium  text-base text-black"><a href="https://www.instagram.com/taa__._/" target="blank">
+            <img src="/photos/insta.png" alt="email" className="inline-block h-4 w-4 mr-1.5" />
+            taa__._</a></h3>
           </div>
         </div>
       </div>
