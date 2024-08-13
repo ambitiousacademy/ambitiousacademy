@@ -214,8 +214,8 @@ const CourseDetails: React.FC = () => {
             <div className="container px-5 py-24 mx-auto ">
               <div className="lg:w-full mx-auto flex flex-wrap">
                 <Image
-                // dynamic image changed to static
-                   src={course?.courseImage}
+                  // dynamic image changed to static
+                  src={course?.courseImage}
                   //src="/./photos/demo1.jpg"
                   alt="image"
                   width={400}
@@ -430,7 +430,24 @@ const CourseDetails: React.FC = () => {
                           <ul>
                             {data.topicsCovered.map((uldata) => (
                               <>
-                                <li>{uldata}</li>
+                                <li className="flex space-x-2">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    className="size-6"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                                    />
+                                  </svg>
+
+                                  {uldata}
+                                </li>
                               </>
                             ))}
                           </ul>

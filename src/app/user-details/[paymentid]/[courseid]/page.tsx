@@ -12,7 +12,6 @@ interface FormData {
   name: string;
   email: string;
   contactnumber: string;
-  occupation: string;
   degree: string;
   year: string;
   courseenrolled: string;
@@ -69,18 +68,21 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
 }) => (
   <div className="mt-2">
     {options.map((option) => (
-      <label key={option.value} className="inline-flex items-center ml-4">
-        <input
-          type="radio"
-          className="form-radio"
-          name={name}
-          value={option.value}
-          checked={selectedValue === option.value}
-          onChange={handleChange}
-          required
-        />
-        <span className="ml-2">{option.label}</span>
-      </label>
+      <>
+        <label key={option.value} className="inline-flex items-center ml-4">
+          <input
+            type="radio"
+            className="form-radio"
+            name={name}
+            value={option.value}
+            checked={selectedValue === option.value}
+            onChange={handleChange}
+            required
+          />
+          <span className="ml-2">{option.label}</span>
+        </label>
+        <br />
+      </>
     ))}
   </div>
 );
@@ -95,7 +97,6 @@ const RegistrationForm: React.FC = () => {
     name: "",
     email: "",
     contactnumber: "",
-    occupation: "",
     degree: "",
     year: "",
     courseenrolled: courseid,
@@ -200,7 +201,6 @@ const RegistrationForm: React.FC = () => {
         name: "",
         email: "",
         contactnumber: "",
-        occupation: "",
         degree: "",
         year: "",
         courseenrolled: courseid,
@@ -268,18 +268,6 @@ const RegistrationForm: React.FC = () => {
       </div>
 
       <div className="mb-4">
-        <label className="block text-gray-700">Occupation</label>
-        <input
-          className="w-full px-3 py-2 border rounded-md"
-          type="text"
-          name="occupation"
-          value={formData.occupation}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="mb-4">
         <label className="block text-gray-700">Degree</label>
         <input
           className="w-full px-3 py-2 border rounded-md"
@@ -303,7 +291,7 @@ const RegistrationForm: React.FC = () => {
         />
       </div>
 
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <label className="block text-gray-700">Course Enrolled</label>
         <input
           className="w-full px-3 py-2 border rounded-md"
@@ -313,10 +301,10 @@ const RegistrationForm: React.FC = () => {
           readOnly
           required
         />
-      </div>
+      </div> */}
 
       <div className="mb-4">
-        <label className="block text-gray-700">Course Title</label>
+        <label className="block text-gray-700">Course Enrolled Title</label>
         <input
           className="w-full px-3 py-2 border rounded-md"
           type="text"
@@ -326,7 +314,7 @@ const RegistrationForm: React.FC = () => {
           required
         />
       </div>
-
+      {/* 
       <div className="mb-4">
         <label className="block text-gray-700">Course Price</label>
         <input
@@ -337,7 +325,7 @@ const RegistrationForm: React.FC = () => {
           readOnly
           required
         />
-      </div>
+      </div> */}
 
       <div className="mb-4">
         <label className="block text-gray-700">
