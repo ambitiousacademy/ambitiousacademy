@@ -306,16 +306,16 @@
 }
 /* Container for the webinars section             */
 .webinars-section {
-  width: 90%;
-  max-width: 1200px;
-  margin: 40px auto;
-  margin-bottom: 0px;
+  width: 1000px; /* Set the width to match the image width */
+  height: 500px; /* Set the height to match the image height */
+  margin: 0 auto; /* Remove top and bottom margins, center horizontally */
+  margin-bottom: 30px;
   padding: 20px;
   background-color: #FA9884;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  max-height: 800px; /* Limit the height */
+  position: relative;
 }
 
 /* Center the content and add spacing */
@@ -329,80 +329,112 @@
 
 /* Title styling */
 .webinars-title {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Adjust size if needed */
   font-weight: bold;
-  color:black;
+  color: black;
   margin-bottom: 20px;
 }
 
-/* Grid layout for webinar cards */
-.webinars-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns in the first row */
-  gap: 20px;
-}
-
-/* Style each webinar card */
-.webinar-card {
+.slider-container {
   position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.webinar-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.webinar-image {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.slides-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slider img {
+  width: 1000px; /* Set width to match container */
+  height: 400px; /* Set height to match container */
+  object-fit: contain;
   transition: opacity 0.3s ease;
 }
 
-.webinar-card:hover .webinar-image {
-  opacity: 0.8;
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
 }
+
+.slider-button.prev {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}
+
 /* Responsive adjustments */
+@media (max-width: 1200px) {
+  .webinars-section {
+    width: 80%; /* Adjust width for medium screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
+  }
+
+  .slider img {
+    width: 80%; /* Adjust image width for medium screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
+  }
+}
+
 @media (max-width: 768px) {
+  .webinars-section {
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    padding: 10px; /* Adjust padding */
+  }
+
   .webinars-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Adjust title font size */
   }
 
-  .webinars-grid {
-    grid-template-columns: 1fr; /* Stack images in a single column on small screens */
+  .slider img {
+    width: 100%; /* Adjust image width for smaller screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
   }
 
-  .webinar-card {
-    justify-self: center; /* Center each card horizontally */
-  }
-
-  .webinar-image {
-    height: 150px; /* Adjust height for smaller screens */
-  }
-
-  .webinar-title {
-    font-size: 1.2rem;
-    margin-top: 10px; /* Add some margin for better spacing */
-  }
-
-  .webinar-description {
-    font-size: 0.9rem;
+  .slider-button {
+    padding: 5px; /* Adjust button padding */
   }
 }
 
-/* Adjustments for larger screens */
-@media (min-width: 769px) {
-  .webinar-card:nth-child(3) {
-    grid-column: span 2; /* Span two columns */
-    width: 600px;
-   
-    justify-self: center; /* Center the third item */
+@media (max-width: 480px) {
+  .webinars-section {
+    width: 100%; /* Full width for very small screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
+  }
+
+  .webinars-title {
+    font-size: 1.2rem; /* Further adjust title font size */
+  }
+
+  .slider img {
+    width: 100%; /* Full width for very small screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
+  }
+
+  .slider-button {
+    padding: 5px; /* Adjust button padding */
+    font-size: 0.8rem; /* Adjust button font size */
   }
 }
+
 
 
 /*-----------------------------------------------courses.css -------------------------------------+ */
@@ -541,4 +573,66 @@
     width: 15rem;
     height: 15rem;
   }
+}
+
+
+
+.podcast-container {
+  margin: 50px auto;
+  background-color: #BFEA7C;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border-radius: 2%;
+}
+
+.profile-section {
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.name {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically if needed */
+}
+
+.link-item {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: baseline; /* Center items horizontally */
+  gap: 10px; /* Space between the logo and text */
+  width: 200px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #FF7D29;
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+.link-item:hover {
+  background-color: #FF7F3E;
+}
+
+.link-logo {
+  width: 30px;
+  height: auto;
+
 }
