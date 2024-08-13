@@ -1,6 +1,7 @@
 import '/src/app/globals.css';
 const ourteam = () => {
   return (
+    <main className="bg-[#DEF9C4]">
       <div className="ourteam-container">
         <h1 className="ourteam-title">OUR TEAM</h1>
         <div className="ourteam-grid">
@@ -34,6 +35,7 @@ const ourteam = () => {
          
         </div>
       </div>
+      </main>
     );
   };
   

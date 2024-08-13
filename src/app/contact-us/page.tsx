@@ -1,6 +1,7 @@
 const ContactUs = () => {
     return (
-      <div className=" mb-20 max-w-4xl mx-auto px-4 py-8  border-double border-4 rounded-2xl	 border-orange-600">
+      <main className="bg-[#DEF9C4]">
+      <div className=" pb-8 max-w-4xl mx-auto px-4 py-8  border-double border-4 rounded-2xl	 border-orange-600">
         <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
         <p className="mb-4">
           If you have any questions about this Privacy Policy or our data practices, please contact us at:
@@ -17,6 +18,7 @@ const ContactUs = () => {
           By using our website, you consent to our Privacy Policy. Thank you for trusting THE AMBITIOUS ACADEMY with your personal data.
         </p>
       </div>
+      </main>
     );
   };
   
