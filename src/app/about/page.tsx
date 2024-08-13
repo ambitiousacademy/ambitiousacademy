@@ -24,7 +24,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 border-double border-4 rounded-2xl text-center font-serif italic border-orange-600">
+    <div className="max-w-4xl mx-auto px-4 py-8 border-double border-4 rounded-2xl text-left font-serif italic border-orange-600">
       <h1 className="text-4xl font-bold mb-4">About Us</h1>
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-2">
