@@ -14,7 +14,7 @@ const Services = () => {
 
   const PopupComponent = ({ closePopup }: { closePopup: () => void }) => (
     <div className=" fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="relative bg-white border border-gray-200 rounded-xl shadow-sm p-4 sm:p-7">
+      <div className="relative bg-white border border-gray-200 rounded-xl shadow-sm p-4 sm:p-7 max-h-screen">
         <button
           onClick={closePopup}
           className="text-right absolute top-0 right-0"
@@ -34,13 +34,12 @@ const Services = () => {
             />
           </svg>
         </button>
-        <div className="text-center">
-          <h1 className="block text-2xl font-bold text-gray-800">
-            Ambitious Coupons
-          </h1>
-          <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-            Fresh Deals Available. Buy Courses At Great Discounts!...
-          </p>
+        <div className="">
+          <img
+            className="object-cover max-h-screen md:pb-12"
+            src="./photos/LaunchDiscountPoster.jpg"
+            alt="Launch Image Poster"
+          />
         </div>
       </div>
     </div>
