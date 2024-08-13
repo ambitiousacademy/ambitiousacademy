@@ -31,42 +31,42 @@ const AboutUs = () => {
             {
               title: "Certification Courses",
               content:
-                "Our diverse range of certification courses is crafted to enhance your career prospects...",
+                "Our diverse range of certification courses is crafted to enhance your career prospects. Whether you aim to upskill, reskill, or explore a new field, our courses meet industry standards and provide practical knowledge and skills. We offer specialized courses such as Law Certification Online and Skill Development Programs via various Skill Development Courses and Workshops, ensuring you gain the expertise needed to excel in your chosen career path. Explore our ambitious academy reviews to see how our certification courses have benefitted others.",
             },
             {
               title: "Comprehensive Test Series",
               content:
-                "Preparing for competitive exams can be daunting. Our comprehensive test series...",
+                " Preparing for competitive exams can be daunting. Our comprehensive test series, meticulously designed to reflect the format and difficulty level of real exams, helps you prepare effectively. These test series help you identify your strengths and areas for improvement, giving you the edge to succeed in exams like law entrance tests.",
             },
             {
               title: "Insightful Webinars",
               content:
-                "Learning from experts is a core aspect of our educational philosophy...",
+                "Learning from experts is a core aspect of our educational philosophy. We host insightful webinars and seminars led by industry leaders and subject matter experts, providing up-to-date information, practical advice, and valuable insights to help you stay ahead in your field.",
             },
             {
               title: "Educational Podcast",
               content:
-                "Our educational podcasts cover a wide range of topics, offering an accessible way to enhance your knowledge...",
+                "Our educational podcasts cover a wide range of topics, offering an accessible way to enhance your knowledge and stay informed about the latest trends and best practices in various fields, including new government laws. Tune in to our podcasts for insights on free online certificate courses for law students and other relevant topics.",
             },
             {
               title: "Informative Blogs and Articles",
               content:
-                "Our blog and article section is a treasure trove of information and insights...",
+                "Our blog and article section is a treasure trove of information and insights. Covering a wide range of topics, our content provides multi-dimensional perspectives on various subjects. Whether you seek industry trends, academic advice, or personal development tips, our blogs and articles enrich your learning experience.",
             },
             {
               title: "Freelancing Section",
               content:
-                "Our freelancing section connects freelancers with potential clients...",
+                "Our freelancing section connects freelancers with potential clients. Freelancers can create profiles, showcase their skills, and bid for projects in their niche. Clients can post job advertisements and find talented professionals to meet their needs, creating a dynamic and efficient marketplace. Our ambitious academy reviews frequently highlight the success stories from our freelancing section.",
             },
             {
               title: "Skill Development Programs",
               content:
-                "Our skill development programs are designed to provide you with the practical skills required in today’s job market...",
+                " Our skill development programs are designed to provide you with the practical skills required in today’s job market. From technical skills to soft skills, our programs cover a broad spectrum of competencies that enhance your employability",
             },
             {
               title: "Internship Programs",
               content:
-                "We offer internship programs that provide hands-on experience and exposure to real-world scenarios...",
+                "We offer internship programs that provide hands-on experience and exposure to real-world scenarios. These programs are tailored to help you apply theoretical knowledge in practical settings, thereby boosting your career prospects.",
             },
           ].map((offering, index) => (
             <li key={index} className="mb-2 ">
