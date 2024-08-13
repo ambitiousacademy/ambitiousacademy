@@ -134,7 +134,7 @@
   
   .slide {
     height: 250px;
-    background-size: cover;
+    background-size: contain;
   }
 
   .slide-content {
@@ -407,6 +407,8 @@
   .slider img {
     width: 100%; /* Adjust image width for smaller screens */
     height: auto; /* Adjust height to maintain aspect ratio */
+    object-fit: contain;
+    
   }
 
   .slider-button {
@@ -528,10 +530,11 @@
 
 .ourteam-container {
   width: 90%;
+  margin-bottom: 0%;
   border: 4px double #ff7f00;
   border-radius: 1rem;
   padding: 1.5rem;
-  background-color: #f3f4f6;
+  background-color: #DEF9C4;
   text-align: center;
 }
 

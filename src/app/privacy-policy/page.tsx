@@ -1,7 +1,7 @@
 const PrivacyPolicy = () => {
     return (
       <main className="bg-[#DEF9C4]">
-      <div className="max-w-4xl mx-auto px-4 py-8 text-justify ">
+      <div className="max-w-4xl mx-auto px-4 py-8 border-double border-4 rounded-2xl border-orange-600 text-justify ">
         <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
         <p className="mb-4">Welcome to THE AMBITIOUS ACADEMY. We are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your personal data when you visit our website and use our services. By accessing or using our website, you agree to the terms of this Privacy Policy.</p>
         <h2 className="text-2xl font-bold mt-8 mb-2">Information We Collect</h2>
