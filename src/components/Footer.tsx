@@ -35,7 +35,7 @@ import Image from "next/image";
             <h3 className="font-heading font-medium  text-base text-black"><a href="whatsapp://send?text=Hello&phone=+919238834569">
             <img src="/photos/whatsapp.png" alt="email" className="inline-block h-4 w-4 mr-1.5" />
             +919238834569</a></h3>
-            <h3 className="font-heading font-medium  text-base  text-black"><a href="https://www.linkedin.com/in/taa-the-ambitious-academy-7092b8317/" target="blank">
+            <h3 className="font-heading font-medium  text-base  text-black"><a href="https://www.linkedin.com/company/the-ambitious-academy/" target="blank">
             <img src="/photos/linkdin.png" alt="email" className="inline-block h-4 w-4 mr-1.5" />
             The Ambitious Academy </a></h3>
             <h3 className="font-heading font-medium  text-base text-black"><a href="https://www.instagram.com/taa__._/" target="blank">

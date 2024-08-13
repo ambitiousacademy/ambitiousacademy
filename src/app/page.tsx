@@ -10,6 +10,9 @@ import Services from "@/components/Services";
 import Subscribe from "../components/Subscribe";
 import Carouselcarousel from "@/components/Coursecarousel";
 import Webinars from "@/components/Webinars";
+import Podcast from "@/components/Podcast";
+
+
 
 export default function Home() {
   const [loading, setLoading] = useState(true); // Initialize loading state as true
@@ -47,6 +50,9 @@ export default function Home() {
         <Subscribe />
 
         <Webinars />
+
+        <Podcast/>
+        
 
         {/* The team component */}
         {/* <Ourteam /> */}
