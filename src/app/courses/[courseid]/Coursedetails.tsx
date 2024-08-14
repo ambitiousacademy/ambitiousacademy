@@ -50,6 +50,7 @@ interface Course {
   imgUrl: string;
   htmlData: any;
   courseHighlights: string;
+  discount: string;
 }
 
 interface isBoughtDataAPI {
@@ -162,7 +163,7 @@ const CourseDetails: React.FC = () => {
               username: user?.username,
               courseid: params.courseid,
               coursename: course?.courseTitle,
-              courseimage: course?.courseImage, //Need To Insert An Image
+              courseimage: "/photos/logo.svg", //Need To Insert An Image
               coursedesc: course?.overview,
               courseduration: course?.structure?.duration, //Has Done Manually Need To Be Stored In DB
             };
@@ -362,7 +363,19 @@ const CourseDetails: React.FC = () => {
 
                   <div className="mt-8 flex">
                     <span className="title-font font-medium text-2xl text-gray-900">
-                      ₹ {course?.coursePrice}
+                      <span className="">
+                        ₹{" "}
+                        {(
+                          parseInt(course?.coursePrice) *
+                          (1 - parseInt(course?.discount) / 100)
+                        ).toFixed(0)}{" "}
+                        {"("}
+                        {course?.discount}% Off On{" "}
+                        <span className=" line-through">
+                          {course?.coursePrice}
+                          {")"}
+                        </span>{" "}
+                      </span>
                     </span>
                     {isSignedIn ? (
                       isBought ? (
@@ -378,7 +391,12 @@ const CourseDetails: React.FC = () => {
                         <button
                           onClick={() => {
                             toast.success("Initiating The Payment Process.");
-                            checkoutHandler(course?.coursePrice);
+                            checkoutHandler(
+                              (
+                                parseInt(course?.coursePrice) *
+                                (1 - parseInt(course?.discount) / 100)
+                              ).toFixed(0)
+                            );
                           }}
                           className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
                         >
