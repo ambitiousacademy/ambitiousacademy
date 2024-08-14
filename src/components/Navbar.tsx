@@ -43,7 +43,7 @@ const Navbar = () => {
                 alt="Login"
               />
             }
-            <span className="self-center text-xl md:text-2xl font-style: italic  whitespace-nowrap">
+            <span className="self-center text-lg md:text-xl  whitespace-nowrap">
               The Ambitious Academy
             </span>
           </a>
