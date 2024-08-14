@@ -12,6 +12,9 @@ interface Course {
   courseImage: string;
   coursePrice: string;
   overview: string;
+  importance: string;
+  assessment: string;
+  joinUs: string;
   instructor: {
     name: string;
     bio: string;
@@ -28,6 +31,7 @@ interface Course {
     foundationalModules: {
       moduleNumber: number;
       moduleName: string;
+      moduleDescription: string;
       topicsCovered: string[];
     }[];
     advancedModules: {
@@ -44,6 +48,8 @@ interface Course {
   };
   conclusion: string;
   imgUrl: string;
+  htmlData: any;
+  courseHighlights: string;
 }
 
 interface isBoughtDataAPI {
@@ -394,12 +400,27 @@ const CourseDetails: React.FC = () => {
               </div>
             </div>
             <div className="container px-5 mx-auto">
-              <h2 className="mt-12 text-3xl font-bold font-heading mb-4">
-                What you’ll get
+              <h2 className="mt-4 text-3xl font-bold font-heading mb-4">
+                Course Overview
               </h2>
               <div className="mb-8 mt-4">
                 <p className="leading-relaxed">{course?.overview}</p>
               </div>
+
+              {course?.importance && (
+                <>
+                  <h2 className="mt-12 text-3xl font-bold font-heading mb-4">
+                    Importance of the Course
+                  </h2>
+                  <div className="mb-8 mt-4">
+                    <p className="leading-relaxed">{course?.importance}</p>
+                  </div>
+                </>
+              )}
+
+              <h2 className="mt-12 text-3xl font-bold font-heading mb-4">
+                Modules
+              </h2>
               <div className="grid divide-y divide-neutral-20  mx-auto mt-8">
                 {course?.detailedInformation.foundationalModules.map(
                   (data, index) => (
@@ -407,7 +428,7 @@ const CourseDetails: React.FC = () => {
                       <details className="group">
                         <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                           <span>
-                            {data.moduleNumber}: {data.moduleName}
+                            Module {data.moduleNumber}: {data.moduleName}
                           </span>
                           <span className="transition group-open:rotate-180">
                             <svg
@@ -425,6 +446,7 @@ const CourseDetails: React.FC = () => {
                             </svg>
                           </span>
                         </summary>
+                        <p>{data.moduleDescription}</p>
                         <p className="text-neutral-600 mt-3 group-open:animate-fadeIn">
                           <h3 className="font-extrabold">Topic Covered:</h3>
                           <ul>
@@ -457,31 +479,63 @@ const CourseDetails: React.FC = () => {
                   )
                 )}
               </div>
+              {course?.keyFeatures && (
+                <>
+                  <div className="mb-8">
+                    <h2 className="mt-12 text-3xl font-bold font-heading mb-4">
+                      Key Features
+                    </h2>
+                    <p
+                      dangerouslySetInnerHTML={{ __html: course?.keyFeatures }}
+                    />
+                  </div>
+                </>
+              )}
 
-              {/* <div className="mb-8">
-                <h3 className="text-lg font-bold font-heading mb-2">
-                  Key Features
-                </h3>
-                <ul className="list-disc list-inside">
-                  <li>{course?.keyFeatures.guestLectures}</li>
-                  <li>{course?.keyFeatures.researchPapersAndMaterials}</li>
-                  <li>{course?.keyFeatures.bareActAndCaseLawStudy}</li>
-                  <li>{course?.keyFeatures.practicalExposure}</li>
-                </ul>
-              </div> */}
-              {/* <div className="mb-8">
-                <h3 className="text-lg font-bold font-heading mb-2">
-                  Instructor
-                </h3>
-                <p>
-                  <span className="font-bold">Name:</span>{" "}
-                  {course?.instructor?.name}
-                </p>
-                <p>
-                  <span className="font-bold">Bio:</span>{" "}
-                  {course?.instructor?.bio}
-                </p>
-              </div> */}
+              {course?.courseHighlights && (
+                <>
+                  <div className="mb-8">
+                    <h2 className="mt-12 text-3xl font-bold font-heading mb-4">
+                      Course HighLights
+                    </h2>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: course?.courseHighlights,
+                      }}
+                    />
+                  </div>
+                </>
+              )}
+
+              {course?.assessment && (
+                <>
+                  <div className="mb-8">
+                    <h2 className="mt-12 text-3xl font-bold font-heading mb-4">
+                      Assessment
+                    </h2>
+                    <p>{course?.assessment}</p>
+                  </div>
+                </>
+              )}
+
+              {course?.joinUs && (
+                <>
+                  <div className="mb-8">
+                    <h2 className="mt-12 text-3xl font-bold font-heading mb-4">
+                      Join Us
+                    </h2>
+                    <p>{course?.joinUs}</p>
+                  </div>
+                </>
+              )}
+
+              {course?.conclusion && (
+                <>
+                  <div className="mb-8">
+                    <p>{course?.conclusion}</p>
+                  </div>
+                </>
+              )}
             </div>
           </section>
         </>

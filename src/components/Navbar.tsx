@@ -43,8 +43,8 @@ const Navbar = () => {
                 alt="Login"
               />
             }
-            <span className="self-center text-2xl font-style: italic  whitespace-nowrap">
-              Ambitious Academy
+            <span className="self-center text-xl md:text-2xl font-style: italic  whitespace-nowrap">
+              The Ambitious Academy
             </span>
           </a>
           <button
