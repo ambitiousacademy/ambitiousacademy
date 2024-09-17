@@ -365,7 +365,7 @@ const CourseDetails: React.FC = () => {
                     <span className="title-font font-medium text-2xl text-gray-900">
                       <span className="">
                         ₹ {parseInt(course?.discount)} {"("}
-                        15% Off On{" "}
+                        50% Off On{" "}
                         <span className=" line-through">
                           {course?.coursePrice}
                           {")"}
