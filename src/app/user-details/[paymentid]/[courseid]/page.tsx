@@ -191,7 +191,7 @@ const RegistrationForm: React.FC = () => {
     e.preventDefault();
 
     const store = new SteinStore(
-      "https://api.steinhq.com/v1/storages/66ad2f8a4d11fd04f01a24fa"
+      "https://api.steinhq.com/v1/storages/66f17c114d11fd04f02ef32f"
     );
 
     try {
