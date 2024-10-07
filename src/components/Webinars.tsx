@@ -52,7 +52,7 @@ const Webinars = () => {
   );
 };
 
-// export default Webinars;
+ export default Webinars;
 // import React, { useState, useEffect } from "react";
 // <link rel='stylesheet' href='src\app\globals.css'></link>
 
