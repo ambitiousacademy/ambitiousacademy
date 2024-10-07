@@ -46,7 +46,7 @@ const Services = () => {
   );
   return (
     <>
-      <div className="services-container">
+{/*       <div className="services-container">
         <div className="services-background"></div>
         <div className="services-content">
           <h2 className="services-title">Our Services :</h2>
@@ -93,7 +93,7 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {popUp && <PopupComponent closePopup={() => setPopUp(false)} />}
     </>
   );
