@@ -317,7 +317,7 @@
 }
 
 .webinars-content {
-  max-width: 500px; /* Adjust this width based on your design */
+  max-width: 1000px; /* Adjust this width based on your design */
   width: 100%;
   overflow: hidden;
 }
@@ -342,7 +342,7 @@
 
 .webinar-image {
   width: 100%; /* Each image should take the full width of the container */
-  height: 500px; /* Set a specific height for the container */
+  height: 200px; /* Set a specific height for the container */
   object-fit: cover; /* Ensures the image covers the entire container without distortion */
 }
 
