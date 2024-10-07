@@ -163,7 +163,7 @@ const Webinars = () => {
                 <a href={slide.link} key={index}>
                   <img
                     src={slide.image}
-                    className="webinar-image"
+{/*                     className="webinar-image" */}
                     alt={`Webinar ${index + 1}`}
                   />
                 </a>
