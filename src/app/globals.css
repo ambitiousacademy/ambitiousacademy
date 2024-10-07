@@ -392,7 +392,11 @@
     height: auto; /* Adjust height to maintain aspect ratio */
   }
 }
-
+.webinars-content {
+  max-width: 800px; /* Adjust this width based on your design */
+  width: 100%;
+  overflow: hidden;
+}
 @media (max-width: 768px) {
   .webinars-section {
     width: 90%; /* Adjust width for smaller screens */
