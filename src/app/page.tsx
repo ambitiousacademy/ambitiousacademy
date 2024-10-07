@@ -7,7 +7,7 @@ import HeaderSection from "../components/Header";
 // import Reviews from "@/components/Reviews";
 import { useEffect, useState } from "react";
 import Services from "@/components/Services";
-import Subscribe from "../components/Subscribe";
+// import Subscribe from "../components/Subscribe";
 import Carouselcarousel from "@/components/Coursecarousel";
 import Webinars from "@/components/Webinars";
 import Podcast from "@/components/Podcast";
@@ -47,7 +47,7 @@ export default function Home() {
         <Services />
 
         {/* This is the subscription component for taking user emails and all */}
-        <Subscribe />
+{/*         <Subscribe /> */}
 
         <Webinars />
 
