@@ -178,7 +178,7 @@
 // // };
 
 // // export default Webinars;
- import { Link } from 'react-router-dom';
+
 import React, { useState, useEffect, useRef } from "react";
 <link rel='stylesheet' href='src\app\globals.css'></link> // Import the CSS file properly
 
@@ -233,9 +233,9 @@ const Webinars = () => {
           {slides.map((slide, index) => (
             <div className="slide" key={index}>
               {slide.map((image, idx) => (
-                 <Link key={idx} to={image.link}>
+                 <a href={image.link} key={idx}>
                  <img src={image.src} alt={image.alt} />
-               </Link>
+               </a>
               ))}
             </div>
             
