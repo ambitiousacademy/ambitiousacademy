@@ -467,9 +467,7 @@
 } */
 /* Responsive adjustments */
 .section{ 
-  /* width: 600px; /*Set the width to match the image width*/
-  /* height: 500px; Set the height to match the image height */ 
-   /* margin: 0 auto; /*Remove top and bottom margins, center horizontally */
+ 
    margin-bottom: 30px; 
   padding: 20px; 
   background-color: #ef9380;

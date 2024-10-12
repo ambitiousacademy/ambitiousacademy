@@ -231,8 +231,9 @@
   // );
   // const Slider = () => {
   //   const [currentSlide, setCurrentSlide] = useState(0);
-  import { Link } from 'react-router-dom';
+"use clients"
 import React, { useState, useEffect, useRef } from "react";
+
 <link rel='stylesheet' href='src\app\globals.css'></link> // Import the CSS file properly
 
 const Webinars = () => {
@@ -240,7 +241,7 @@ const Webinars = () => {
   
     const slides = [
       [ // First slide with two images
-        { src: './photos/2.jpg', alt: 'Image 1' ,link: '/page1'},
+        { src: './photos/2.jpg', alt: 'Image 1' ,link: '/WorkshopDetails'},
         { src: './photos/3.jpg', alt: 'Image 2',link: '/page1' }
       ],
       [ // Second slide with one image
@@ -286,9 +287,9 @@ const Webinars = () => {
           {slides.map((slide, index) => (
             <div className="slide" key={index}>
               {slide.map((image, idx) => (
-                 <Link key={idx} to={image.link}>
+                 <a href={image.link} key={idx}>
                  <img src={image.src} alt={image.alt} />
-               </Link>
+               </a>
               ))}
             </div>
             
@@ -332,6 +333,7 @@ const Webinars = () => {
         </div>
       </div>
       </div>
+    
      </div>
     );
 };
