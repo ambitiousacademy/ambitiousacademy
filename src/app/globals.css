@@ -476,15 +476,29 @@
   overflow: hidden;
   position: relative;
 }
+.webinars-content{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  margin-bottom: 30px; 
+  margin-top: 30px;
+  margin-left: 25%;
+   width: 800px; 
+   height: 400px;
+ /* padding: 20px; */
+  background-color: #ef9380;
+}
 .slider-container {
   position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 600px; /* Set the width to match the image */
+  height: 300px; /* Set the height to match the image */
   overflow: hidden;
+  margin: 0 auto;
+  border-radius: 1.7rem;
 }
 .webinars-title {
-  padding-left: 45%;
+  padding-left: 35%;
   align-items: center;
    font-size: 2rem; /*Adjust size if needed */
 font-weight: bold;
@@ -492,9 +506,14 @@ font-weight: bold;
   margin-bottom: 20px;
 
 }
+/* .webinar-image {
+  width: 100%;
+  height: auto;
+} */
+
 .slider {
   display: flex;
-  transition: transform 1s ease-in-out;
+  transition: transform 5s ease-in-out;
 }
 
 .slide {
@@ -508,7 +527,7 @@ font-weight: bold;
 .slide img {
   width: 600px;
   height: 300px;
-  margin: 0 10px;
+  /* margin: 0 10px; */
 }
 
 .slider-btn {
