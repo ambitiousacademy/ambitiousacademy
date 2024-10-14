@@ -288,19 +288,21 @@
   width: 400px;
   border-radius: 5%;
 }
+/* Container for the webinars section  */
 
-.section{ 
- 
-   margin-bottom: 30px; 
-  padding: 20px; 
-  background-color: #ef9380;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.webinars-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
   overflow: hidden;
-  position: relative;
 }
-.webinars-content{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.webinars-content {
+  max-width: 1000px; /* Adjust this width based on your design */
+  width: 100%;
   overflow: hidden;
   position: relative;
   border-radius: 12px;
@@ -333,7 +335,8 @@ font-weight: bold;
 
 .slider {
   display: flex;
-  transition: transform 5s ease-in-out;
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+  width: 100%; /* Set to 100% of the parent container */
 }
 
 .slide {
@@ -344,10 +347,11 @@ font-weight: bold;
   flex-shrink: 0;
 }
 
-.slide img {
-  width: 600px;
-  height: 300px;
-  /* margin: 0 10px; */
+.webinar-image {
+    width:100%;
+ /* Each image should take the full width of the container */
+  height: 500px; /* Set a specific height for the container */
+  object-fit: cover; /* Ensures the image covers the entire container without distortion */
 }
 
 .slider-btn {
@@ -369,29 +373,6 @@ font-weight: bold;
 .slider-button.next {
   right: 10px;
 }
-
-.slider-dots {
-  text-align: center;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-}
-
-.dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  background-color: #ddd;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #333;
-}
-
-
 
 /*-----------------------------------------------courses.css -------------------------------------+ */
 .courses-section {
