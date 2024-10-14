@@ -1,0 +1,196 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .workshop-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .workshop-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .register-button-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .register-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .register-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Register Form Styles */
+  .register-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #218838;
+  }
+/* Container styling */
+.workshop-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+   position:relative;
+}
+
+/* Title styling */
+.workshop-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Subheading styling */
+h2, h3 {
+  font-size: 1.75rem;
+  color: #0056b3;
+  margin-top: 20px;
+}
+
+/* Paragraph styling */
+p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* List styling */
+ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+strong {
+  color: #000;
+}
+
+/* Button styling */
+.register-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.register-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.register-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
+}
+/* Price and Register Box */
+.price-register-box {
+  position: fixed; /* Fix the box to the right side */
+  top: 100px; /* Adjust this value as needed to align vertically */
+  right: 70px; /* Space from the right side of the page */
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  width: 250px; /* Adjust width as needed */
+  text-align: center;
+}
+/* Price text */
+.price-text {
+  font-size: 1rem;
+  color: #212120; /* Orange/red color to grab attention */
+  margin-bottom: 5px; /* Space between text and button */
+  font-weight: bold;
+}
+
+/* Button styling */
+.register-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.register-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.register-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
+}
