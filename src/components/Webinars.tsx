@@ -236,7 +236,7 @@ import React, { useState, useEffect, useRef } from "react";
 import image1 from '../../public/photos/2.jpg';
 import image2 from '../../public/photos/3.jpg';
 import image3 from '../../public/photos/4.jpg';
-<link rel='stylesheet' href='src\app\globals.css'></link> // Import the CSS file properly
+import '/src/app/globals.css' // Import the CSS file properly
 
 const Webinars = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
