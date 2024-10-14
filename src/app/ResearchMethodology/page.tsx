@@ -19,7 +19,7 @@ const ResearchMethodologyWorkshop = () => {
         <li><strong>AI Integration in Research:</strong> Participants will explore how AI can assist in data collection, analysis, and interpretation, enhancing research efficiency and insights.</li>
         <li><strong>Data Analysis and Interpretation:</strong> Students will develop skills in analyzing data using statistical software and AI-driven tools.</li>
         <li><strong>Citation and Formatting:</strong> The workshop will provide guidance on the types of citations required for a perfect research paper format.</li>
-        <li><strong>Critical Thinking and Problem-Solving:</strong> Practical exercises will enhance students' critical thinking and problem-solving abilities, essential for successful research.</li>
+        <li><strong>Critical Thinking and Problem-Solving:</strong> Practical exercises will enhance students&#39; critical thinking and problem-solving abilities, essential for successful research.</li>
       </ul>
 
       <h2>Workshop Structure:</h2>

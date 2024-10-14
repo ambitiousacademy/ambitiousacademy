@@ -73,7 +73,7 @@ const WorkshopDetails: React.FC = () => {
 <h3>Day 6: Simulated Moot Court Rounds</h3>
       <ul>
         <li>First Round of Simulated Moot Court</li>
-        <li>Judges' Feedback and Evaluation</li>
+        <li>Judge&#39;s Feedback and Evaluation</li>
         <li>Second Round of Simulated Moot Court</li>
         <li>Group Debrief and Discussion</li>
       </ul>
