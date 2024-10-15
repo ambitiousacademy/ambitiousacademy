@@ -385,6 +385,7 @@ font-weight: bold;
   .slider-container {
     width: 100%;
     height: 150px;
+    border-radius:0px;
   }
 .slide-track{
   height:140px;
