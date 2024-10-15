@@ -194,3 +194,57 @@ strong {
 .register-button:hover {
   background-color: #0056b3;
 }
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .workshop-container {
+    padding: 10px;
+  }
+
+  .workshop-title {
+    font-size: 2rem;
+  }
+
+  h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  p, ul li {
+    font-size: 1rem;
+  }
+
+  .price-register-box {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .register-button {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .workshop-title {
+    font-size: 1.5rem;
+  }
+
+  h2, h3 {
+    font-size: 1.25rem;
+  }
+
+  p, ul li {
+    font-size: 0.9rem;
+  }
+
+  .price-register-box {
+    padding: 5px;
+  }
+
+  .register-button {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}

@@ -373,6 +373,40 @@ font-weight: bold;
 .slider-button.next {
   right: 10px;
 }
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .webinars-content {
+    width: 85%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .slider-container {
+    width: 100%;
+    height: 140px;
+  }
+
+  .webinar-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider-button {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .webinars-title {
+    font-size: 1.3rem;
+    
+    /* margin-right:25%; */
+  }
+
+  .slider-button {
+    padding: 3px;
+  }
+}
 
 /*-----------------------------------------------courses.css -------------------------------------+ */
 .courses-section {
